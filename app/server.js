@@ -27,8 +27,14 @@ class Application {
     );
   }
   connectToDB() {
+    console.log("DB_URI:", this.#DB_URI); // Log the value of this.#DB_URI
+
+    // Hardcoded connection string for testing
+    const connectionString =
+      "mongodb+srv://seyedalirafazi80:U0CuJJlCyLk6Otis@cluster0.pfqeu.mongodb.net/freelancerApp";
+
     mongoose
-      .connect(this.#DB_URI, {
+      .connect(connectionString, {
         useNewUrlParser: true,
         useUnifiedTopology: true,
       })
