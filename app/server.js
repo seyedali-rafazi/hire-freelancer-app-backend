@@ -37,7 +37,13 @@ class Application {
   }
   configServer() {
     this.#app.use(
-      cors({ credentials: true, origin: process.env.ALLOW_CORS_ORIGIN })
+      cors({
+        credentials: true,
+        origin: [
+          "https://hire-freelancer-react.onrender.com",
+          "http://localhost:3000",
+        ], // Allow both origins
+      })
     );
     this.#app.use(express.json());
     this.#app.use(express.urlencoded({ extended: true }));

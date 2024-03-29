@@ -95,7 +95,7 @@ class userAuthController extends Controller {
   }
   async updateUser(phoneNumber, objectData = {}) {
     Object.keys(objectData).forEach((key) => {
-      if (["", " ", 0, null, undefined, "0", NaN].includes(objectData[key]))
+      if (["", " ", 0, null, , "0", NaN].includes(objectData[key]))
         delete objectData[key];
     });
     const updatedResult = await UserModel.updateOne(
@@ -216,11 +216,13 @@ class userAuthController extends Controller {
       expires: Date.now(),
       httpOnly: true,
       signed: true,
-      sameSite: "Lax",
+      sameSite: "None", // Updated to 'None'
       secure: true,
       path: "/",
       domain:
-        process.env.NODE_ENV === "development" ? "localhost" : ".fronthooks.ir",
+        process.env.NODE_ENV === "development"
+          ? "localhost"
+          : "https://hire-freelancer-react.onrender.com",
     };
     res.cookie("accessToken", null, cookieOptions);
     res.cookie("refreshToken", null, cookieOptions);
