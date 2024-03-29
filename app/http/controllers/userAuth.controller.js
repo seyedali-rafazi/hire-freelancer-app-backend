@@ -217,7 +217,7 @@ class userAuthController extends Controller {
       httpOnly: true,
       signed: true,
       sameSite: "None", // Updated to 'None'
-      secure: true,
+      secure: process.env.NODE_ENV !== "development", // Set secure to false in development
       path: "/",
       domain:
         process.env.NODE_ENV === "development"

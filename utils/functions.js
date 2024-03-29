@@ -30,7 +30,7 @@ async function setAccessToken(res, user) {
     httpOnly: true, // The cookie only accessible by the web server
     signed: true, // Indicates if the cookie should be signed
     sameSite: "None", // Updated to 'None'
-    secure: true,
+    secure: process.env.NODE_ENV !== "development", // Set secure to false in development
     domain:
       process.env.NODE_ENV === "development"
         ? "localhost"
@@ -49,7 +49,7 @@ async function setRefreshToken(res, user) {
     httpOnly: true, // The cookie only accessible by the web server
     signed: true, // Indicates if the cookie should be signed
     sameSite: "None", // Updated to 'None'
-    secure: true,
+    secure: process.env.NODE_ENV !== "development", // Set secure to false in development
     domain:
       process.env.NODE_ENV === "development"
         ? "localhost"
