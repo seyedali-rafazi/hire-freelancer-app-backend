@@ -217,12 +217,8 @@ class userAuthController extends Controller {
       httpOnly: true,
       signed: true,
       sameSite: "None", // Updated to 'None'
-      secure: false, // Set secure to false in development
+      secure: process.env.NODE_ENV === "production", // Set secure to true in production
       path: "/",
-      domain:
-        process.env.NODE_ENV === "development"
-          ? "localhost"
-          : "https://hire-freelancer-react.onrender.com",
     };
     res.cookie("accessToken", null, cookieOptions);
     res.cookie("refreshToken", null, cookieOptions);

@@ -30,11 +30,8 @@ async function setAccessToken(res, user) {
     httpOnly: true, // The cookie only accessible by the web server
     signed: true, // Indicates if the cookie should be signed
     sameSite: "None", // Updated to 'None'
-    secure: false, // Set secure to false in development
-    domain:
-      process.env.NODE_ENV === "development"
-        ? "localhost"
-        : "https://hire-freelancer-react.onrender.com",
+    secure: process.env.NODE_ENV === "production", // Set secure to true in production
+
   };
   res.cookie(
     "accessToken",
@@ -49,11 +46,7 @@ async function setRefreshToken(res, user) {
     httpOnly: true, // The cookie only accessible by the web server
     signed: true, // Indicates if the cookie should be signed
     sameSite: "None", // Updated to 'None'
-    secure: false, // Set secure to false in development
-    domain:
-      process.env.NODE_ENV === "development"
-        ? "localhost"
-        : "https://hire-freelancer-react.onrender.com",
+    secure: process.env.NODE_ENV === "production", // Set secure to true in production
   };
   res.cookie(
     "refreshToken",
