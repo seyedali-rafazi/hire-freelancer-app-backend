@@ -35,7 +35,7 @@ class ProjectController extends Controller {
       },
     });
   }
-  
+
   async getListOfProjects(req, res) {
     let dbQuery = {};
     const { search, category, sort, status } = req.query;
@@ -219,7 +219,6 @@ class ProjectController extends Controller {
     const { id } = req.params;
     await this.findProjectById(id);
     const { title, description, tags, deadline, category, budget } = req.body;
-    console.log(req.body);
     await addProjectSchema.validateAsync(req.body);
     const updateResult = await ProjectModel.updateOne(
       { _id: id },

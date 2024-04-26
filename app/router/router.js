@@ -6,7 +6,7 @@ const {
 } = require("../http/middlewares/user.middleware");
 const { adminRoutes } = require("./admin/admin.routes");
 const { categoryRoutes } = require("./category");
-const { projectRoutes } = require("./project");
+const { projectRoutes, listRoute } = require("./project");
 const { proposalRoutes } = require("./proposal");
 const { userAuthRoutes } = require("./userAuth");
 
@@ -20,6 +20,11 @@ router.use(
   isVerifiedUser,
   // authorize(ROLES.ADMIN, ROLES.OWNER),
   projectRoutes
+);
+router.use(
+  "/all-project",
+  // authorize(ROLES.ADMIN, ROLES.OWNER),
+  listRoute
 );
 router.use("/proposal", verifyAccessToken, isVerifiedUser, proposalRoutes);
 router.use(

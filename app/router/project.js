@@ -4,8 +4,12 @@ const { ROLES } = require("../../utils/constants");
 const { authorize } = require("../http/middlewares/permission.guard");
 
 const router = require("express").Router();
+const listRouter = require("express").Router();
 
-router.get("/list", expressAsyncHandler(ProjectController.getListOfProjects));
+listRouter.get(
+  "/list",
+  expressAsyncHandler(ProjectController.getListOfProjects)
+);
 router.get(
   "/owner-projects",
   authorize(ROLES.ADMIN, ROLES.OWNER),
@@ -39,4 +43,5 @@ router.delete(
 
 module.exports = {
   projectRoutes: router,
+  listRoute: listRouter,
 };

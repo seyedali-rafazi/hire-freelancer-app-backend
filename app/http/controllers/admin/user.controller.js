@@ -54,7 +54,6 @@ class UserController extends Controller {
   }
   async verifyUser(req, res) {
     const { userId } = req.params;
-    console.log(req.body);
     let { status } = req.body;
     status = Number(status);
     const updateResult = await UserModel.updateOne(
