@@ -46,7 +46,7 @@ class Application {
       cors({
         credentials: true,
         origin: [
-          "https://takhasossazan.liara.run/",
+          "https://takhasossazan.liara.run",
           "https://hire-freelancer-react.onrender.com",
           "http://localhost:3000",
         ],
