@@ -46,9 +46,10 @@ class Application {
       cors({
         credentials: true,
         origin: [
+          "https://takhasossazan.liara.run/",
           "https://hire-freelancer-react.onrender.com",
           "http://localhost:3000",
-        ], // Allow both origins
+        ],
       })
     );
     this.#app.use(express.json());

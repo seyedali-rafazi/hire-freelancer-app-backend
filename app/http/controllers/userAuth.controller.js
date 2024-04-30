@@ -50,7 +50,7 @@ class userAuthController extends Controller {
       const user = await this.saveUser(phoneNumber, hashedPassword);
       await setAccessToken(res, user);
       await setRefreshToken(res, user);
-      let WELLCOME_MESSAGE = `  ثبت نام انجام شد ، به ترخینه  خوش آمدید  `;
+      let WELLCOME_MESSAGE = `  ثبت نام انجام شد ، به تخصص سازان  خوش آمدید  `;
 
       return res.status(HttpStatus.OK).json({
         statusCode: HttpStatus.OK,
@@ -65,7 +65,7 @@ class userAuthController extends Controller {
       throw createError.Unauthorized("رمز عبور نامعتبر است.");
     await setAccessToken(res, user);
     await setRefreshToken(res, user);
-    let WELLCOME_MESSAGE = `کد تایید شد، به ترخینه  خوش آمدید`;
+    let WELLCOME_MESSAGE = `کد تایید شد، به تخصص سازان  خوش آمدید`;
     if (!user.isActive)
       WELLCOME_MESSAGE = `کد تایید شد، لطفا اطلاعات خود را تکمیل کنید`;
 
