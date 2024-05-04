@@ -1,5 +1,5 @@
 # Hire Freelancering Backend App
-### See [Live](https://accordion-eta-lilac.vercel.app/](https://takhasossazan.liara.run/) 
+### See [Live](https://takhasossazan.liara.run/]
 
 
 This is the backend application for the Hire Freelancering platform, built using Node.js, Express.js, and MongoDB. The app provides a RESTful API for handling user authentication, job postings, freelancer profiles, and other functionalities.
