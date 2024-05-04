@@ -26,10 +26,10 @@ This is the backend application for the Hire Freelancering platform, built using
 
 ## Installation
 
-1. Clone the repository: `git clone https://github.com/your-username/hire-freelancering-backend.git`
-2. Navigate to the project directory: `cd hire-freelancering-backend`
+1. Clone the repository
+2. Navigate to the project directory
 3. Install dependencies: `npm install`
-4. Create a `.env` file in the root directory and add the necessary environment variables (see `.env.example` for reference)
+4. Create a `.env` file in the root directory and add the necessary environment variables
 5. Start the development server: `npm run dev`
 
 
